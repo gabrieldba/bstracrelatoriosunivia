@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa de Relatórios</title>
+    <style>
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+		@keyframes buttonBackgroundAnimation {
+          0% { background: linear-gradient(to right, #FF7F00, #FF5500); }
+          100% { background: linear-gradient(to right, #FF5500, #FF7F00); }
+}
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: all 0.3s;
+            animation: fadeIn 1s ease-in;
+            font-size: 16px;
+			animation: fadeIn 2s;
+        }
+
+        .logo {
+            width: 8%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .search-container {
+            width: 40%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group label {
+            margin-bottom: 5px;
+            color: #FFFFFF;
+        }
+
+        .input-group input, .input-group select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .input-group input[type="button"] {
+            width: 40%; /* largura do botão reduzida para 60% */
+            margin-top: 20px;
+            background: linear-gradient(to right, #FF7F00, #FF5500); /* gradiente de cores adicionado */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            display: block; /* necessário para centralizar o botão */
+            margin-left: auto; /* centralizar o botão */
+            margin-right: auto; /* centralizar o botão */
+			animation: buttonFadeInAnimation 1s ease-in;
+        }
+		.input-group input[type="button"]:hover {
+             animation: buttonBackgroundAnimation 0.3s ease;
+             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       }
+    </style>
+    <script>
+        function generateReportPreview() {
+            // Get the selected value from the "Nome - Código" input field
+            var selectedName = document.getElementById("query").value;
+
+            // Define the predefined PDFs based on names and codes
+            var pdfs = {
+                "ALTAIR DE BRITO - Código 3": "link_to_pdf_1.pdf",
+                "ATAIDE JANUARIO PEREIRA - Código 55": "link_to_pdf_2.pdf",
+                "BRUNO RICARDO DUARTE DA CRUZ - Código 56": "link_to_pdf_3.pdf",
+				"CLAUDECIR BEZERRA DOS ANJOS - Código 39": "link_to_pdf_3.pdf",
+                "CLAUDIO JOSE DE ARAUJO - Código 53": "link_to_pdf_3.pdf",
+                "CRISTIANO FLORENCIO MACHADO - Código 50": "link_to_pdf_3.pdf",
+                "ELIAS FERREIRA - Código 85": "link_to_pdf_3.pdf",
+                "EMANOEL DE PROENÇA CORREA - Código 68": "link_to_pdf_3.pdf",
+                "FELIPE MAXIMO SOARES - Código 87": "link_to_pdf_3.pdf",
+                "JOAO ANTONIO DE OLIVEIRA - Código 79": "link_to_pdf_3.pdf",
+                "JONIEL DE LIMA DEZIDERIO - Código 13": "link_to_pdf_3.pdf",
+                "JOSE DONIZETTE DE ARRUDA - Código 62": "link_to_pdf_3.pdf",
+                "JOSE RICARDO QUEIROZ FIUZA - Código 15": "link_to_pdf_3.pdf",
+                "MAGNO JUNIO FERREIRA - Código 89": "link_to_pdf_3.pdf",
+                "MARCELO ALBUQUERQUE ALVAREZ - Código 88": "link_to_pdf_3.pdf",
+                "MARCIO ROGERIO CYRINEU DE MEDEIROS - Código 20": "link_to_pdf_3.pdf",
+                "MARCOS DOS SANTOS GARCIA - Código 66": "link_to_pdf_3.pdf",
+                "MIZAEL DA SILVA LOPES - Código 52": "link_to_pdf_3.pdf",
+                "OSMAR LUCIANO DOS SANTOS - Código 26": "link_to_pdf_3.pdf",
+                "OTAVIO APARECIDO NEVES - Código 76": "link_to_pdf_3.pdf",
+                "RAUL DOMINGUES DE OLIVEIRA MARTINS - Código 30": "link_to_pdf_3.pdf",
+                "RICARDO PINTO DE OLIVEIRA - Código 65": "link_to_pdf_3.pdf",
+                "RODNEY WILLIAM PIRES DE MEIRA - Código 86": "link_to_pdf_3.pdf",
+                "RODRIGO RODRIGUES CLETO - Código 37": "link_to_pdf_3.pdf",
+                "SIDCLEY FERNANDO LEITE DA SILVA - Código 33": "link_to_pdf_3.pdf",
+                "SILVIO CESAR MALTA - Código 34": "link_to_pdf_3.pdf",
+                "TIAGO DAMIAO CORREA DE MORAES - Código 70": "https://drive.google.com/uc?export=download&id=1fgHIjMg52cDjFoMX7zEY9esayFS2d7r8",
+                "FABIO GONCALVES DA MAIA - Código 90": "link_to_pdf_3.pdf",
+                // Add more predefined PDFs for other names and codes as needed
+            };
+
+            // Check if the selected name exists in the PDFs object
+            if (selectedName in pdfs) {
+                // Get the PDF link from the object
+                var pdfLink = pdfs[selectedName];
+                // Redirect to the new page with the PDF preview
+                window.location.href = "pdf_preview.html?pdf=" + encodeURIComponent(pdfLink);
+            } else {
+                alert("Selected name not found or no PDF available for this name.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/gabrieldba/imagem/main/BStrac_logo%20verso%20icone_branca%2001.png" alt="Logo">
+    </div>
+    <div class="search-container">
+        <form>
+            <fieldset>
+                <div class="input-group">
+                    <label for="type">Pesquisar por:</label>
+                    <select id="type" name="type">
+                        <option value="funcionario">Funcionário</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="query">Nome - Código:</label>
+                    <input type="text" id="query" name="query" list="searchOptions" autocomplete="off">
+                    <!-- Define the datalist with id "searchOptions" -->
+                    <datalist id="searchOptions">
+                        <!-- List of search options -->
+                        <option value="ALTAIR DE BRITO - Código 3">
+                        <option value="ATAIDE JANUARIO PEREIRA - Código 55">
+                        <option value="BRUNO RICARDO DUARTE DA CRUZ - Código 56">
+                        <option value="CLAUDECIR BEZERRA DOS ANJOS - Código 39">
+                        <option value="CLAUDIO JOSE DE ARAUJO - Código 53">
+                        <option value="CRISTIANO FLORENCIO MACHADO - Código 50">
+                        <option value="ELAS FERREIRA - Código 85">
+                        <option value="EMANOEL DE PROENÇA CORREA - Código 68">
+                        <option value="FELIPE MAXIMO SOARES - Código 87">
+                        <option value="JOAO ANTONIO DE OLIVEIRA - Código 79">
+                        <option value="JONIEL DE LIMA DEZIDERIO - Código 13">
+                        <option value="JOSE DONIZETTE DE ARRUDA - Código 62">
+                        <option value="JOSE RICARDO QUEIROZ FIUZA - Código 15">
+                        <option value="MAGNO JUNIO FERREIRA - Código 89">
+                        <option value="MARCELO ALBUQUERQUE ALVAREZ - Código 88">
+                        <option value="MARCIO ROGERIO CYRINEU DE MEDEIROS - Código 20">
+                        <option value="MARCOS DOS SANTOS GARCIA - Código 66">
+                        <option value="MIZAEL DA SILVA LOPES - Código 52">
+                        <option value="OSMAR LUCIANO DOS SANTOS - Código 26">
+                        <option value="OTAVIO APARECIDO NEVES - Código 76">
+                        <option value="RAUL DOMINGUES DE OLIVEIRA MARTINS - Código 30">
+                        <option value="RICARDO PINTO DE OLIVEIRA - Código 65">
+                        <option value="RODNEY WILLIAM PIRES DE MEIRA - Código 86">
+                        <option value="RODRIGO RODRIGUES CLETO - Código 37">
+                        <option value="SIDCLEY FERNANDO LEITE DA SILVA - Código 33">
+                        <option value="SILVIO CESAR MALTA - Código 34">
+                        <option value="TIAGO DAMIAO CORREA DE MORAES - Código 70">
+                        <option value="FABIO GONCALVES DA MAIA - Código 90">
+                    </datalist>
+                </div>
+            </fieldset>
+                
+            <div class="input-group">
+                <input type="button" value="Gerar Relatório" onclick="generateReportPreview()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
