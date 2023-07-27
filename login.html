@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+	    
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .login-container {
+            width: 30%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group label {
+            margin-bottom: 5px;
+            color: #FFFFFF;
+        }
+
+        .input-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .input-group input[type="submit"] {
+            width: 40%; /* largura do botão reduzida para 60% */
+            margin-top: 20px;
+            background: linear-gradient(to right, #FF7F00, #FF5500); /* gradiente de cores adicionado */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            display: block; /* necessário para centralizar o botão */
+            margin-left: auto; /* centralizar o botão */
+            margin-right: auto; /* centralizar o botão */
+			animation: buttonFadeInAnimation 1s ease-in;
+        }
+		.input-group input[type="submit"]:hover {
+             animation: buttonBackgroundAnimation 0.3s ease;
+             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+       }
+		
+		.logo {
+            width: 8%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+ <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Perform your login authentication here (you can use JavaScript or connect to a server).
+            // For this example, let's use a simple hardcoded login for demonstration purposes.
+            var validUsername = "admin";
+            var validPassword = "Univiaadmin2023";
+
+            if (username === validUsername && password === validPassword) {
+                // Set the login status in localStorage
+                localStorage.setItem("loggedIn", "true");
+                // Redirect to the index.html page if login is successful
+                window.location.href = "index.html";
+            } else {
+                // Display an error message for invalid credentials
+                alert("Invalid username or password. Please try again.");
+            }
+			return false;
+        }
+    </script>
+<body>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/gabrieldba/imagem/main/BStrac_logo%20verso%20icone_branca%2001.png" alt="Logo">
+    </div>
+	
+    <div class="login-container">
+        <form onsubmit="return login()">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
