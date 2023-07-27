@@ -146,7 +146,7 @@
                 // Get the PDF link from the object
                 var pdfLink = pdfs[selectedName];
                 // Redirect to the new page with the PDF preview
-                window.location.href = "" + encodeURIComponent(pdfLink);
+                window.location.href = "pdf_preview.html?pdf=" + encodeURIComponent(pdfLink);
             } else {
                 alert("Selected name not found or no PDF available for this name.");
             }
