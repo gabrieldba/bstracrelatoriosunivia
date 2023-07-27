@@ -110,7 +110,7 @@
 
             // Define the predefined PDFs based on names and codes
             var pdfs = {
-                "ALTAIR DE BRITO - Código 3": "https://drive.google.com/uc?export=download&id=1etc-Wp0QbVeIn5p7nIlDRU2gLsTS_olC", 
+                "ALTAIR DE BRITO - Código 3": "1etc-Wp0QbVeIn5p7nIlDRU2gLsTS_olC", 
                 "ATAIDE JANUARIO PEREIRA - Código 55": "https://drive.google.com/uc?export=download&id=1kW6uoGxVXw1DkPb_bmgCE6ySFOyKgKU5",
                 "BRUNO RICARDO DUARTE DA CRUZ - Código 56": "https://drive.google.com/uc?export=download&id=15T3-2SxD5_fr4lMXD0euR0yM5wIxVHhB", 
 				"CLAUDECIR BEZERRA DOS ANJOS - Código 39": "https://drive.google.com/uc?export=download&id=1ZhmbMqpVA9Y_6-PyWfjWZy1zDCLRSgbd", 
@@ -146,7 +146,7 @@
                 // Get the PDF link from the object
                 var pdfLink = pdfs[selectedName];
                 // Redirect to the new page with the PDF preview
-                window.location.href = "pdf_preview.html?pdf=" + encodeURIComponent(pdfLink);
+                window.location.href = "https://drive.google.com/uc?export=download&id=" + encodeURIComponent(pdfLink);
             } else {
                 alert("Selected name not found or no PDF available for this name.");
             }
