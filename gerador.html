@@ -105,39 +105,40 @@
 </head>
     <script>
         function generateReportPreview() {
-            // Get the selected value from the "Nome - Código" input field
+            // Get the selected value from the "Nome - Código" input field 
             var selectedName = document.getElementById("query").value;
 
             // Define the predefined PDFs based on names and codes
             var pdfs = {
-                "ALTAIR DE BRITO - Código 3": "https://drive.google.com/file/d/1etc-Wp0QbVeIn5p7nIlDRU2gLsTS_olC/view?usp=sharing", 
-                "ATAIDE JANUARIO PEREIRA - Código 55": "https://drive.google.com/file/d/1kW6uoGxVXw1DkPb_bmgCE6ySFOyKgKU5/view?usp=sharing",
-                "BRUNO RICARDO DUARTE DA CRUZ - Código 56": "https://drive.google.com/file/d/15T3-2SxD5_fr4lMXD0euR0yM5wIxVHhB/view?usp=sharing", 
-		"CLAUDECIR BEZERRA DOS ANJOS - Código 39": "https://drive.google.com/file/d/1ZhmbMqpVA9Y_6-PyWfjWZy1zDCLRSgbd/view?usp=sharing", 
-                "CLAUDIO JOSE DE ARAUJO - Código 53": "link_to_pdf_3.pdf",        
-                "CRISTIANO FLORENCIO MACHADO - Código 50": "link_to_pdf_3.pdf",
-                "ELIAS FERREIRA - Código 85": "link_to_pdf_3.pdf",
-                "EMANOEL DE PROENÇA CORREA - Código 68": "link_to_pdf_3.pdf",   
+                "ALTAIR DE BRITO - Código 3": "https://drive.google.com/file/d/1HwganjeM85swmMl_tVP281L1v85OXzoZ/view?usp=sharing", 
+                "ATAIDE JANUARIO PEREIRA - Código 55": "https://drive.google.com/file/d/1ozvhMm759QujXWQrEKs9pmXq8o8w9-as/view?usp=sharing",
+                "BRUNO RICARDO DUARTE DA CRUZ - Código 56": "https://drive.google.com/file/d/1ID7Dxp40VQdCCB-Xg1i1xJElu2ZBWB9X/view?usp=sharing", 
+		"CLAUDECIR BEZERRA DOS ANJOS - Código 39": "https://drive.google.com/file/d/1fGIAFpvJthNhWap9b7r4qdAnF357joM_/view?usp=sharing", 
+                "CLAUDIO JOSE DE ARAUJO - Código 53": "https://drive.google.com/file/d/1htpKKLWR2gTj28nuH2KnleRO5rLbW51j/view?usp=sharing",        
+                "CRISTIANO FLORENCIO MACHADO - Código 50": "https://drive.google.com/file/d/10D2lYp7cLoQEHTBoMrXxNG5vzplyufH4/view?usp=sharing",
+                "ELIAS FERREIRA - Código 85": "https://drive.google.com/file/d/1GqZUBoNTue9CIuWH3SIz3-y_mUPdBV-7/view?usp=sharing",
+                "EMANOEL DE PROENÇA CORREA - Código 68": "https://drive.google.com/file/d/19bTJ1RaaPBb_OVqmUKY6KiBSWre1zhUv/view?usp=sharing", 
+		"FABIO GONCALVES DA MAIA - Código 90": "https://drive.google.com/file/d/1COVrYTEQy4ywHVz5TGiUKsHCkUJEcEDQ/view?usp=sharing",
                 "FELIPE MAXIMO SOARES - Código 87": "link_to_pdf_3.pdf",
-                "JOAO ANTONIO DE OLIVEIRA - Código 79": "link_to_pdf_3.pdf",
-                "JONIEL DE LIMA DEZIDERIO - Código 13": "link_to_pdf_3.pdf",
+                "JOAO ANTONIO DE OLIVEIRA - Código 79": "https://drive.google.com/file/d/1b7F1NnYDhD1pk0tLFpfJQpy61cWXzvZ7/view?usp=sharing",
+                "JONIEL DE LIMA DEZIDERIO - Código 13": "https://drive.google.com/file/d/1KoM2accuoiz_3lkASEjx7cft2sQ7JJZ3/view?usp=sharing",
                 "JOSE DONIZETTE DE ARRUDA - Código 62": "link_to_pdf_3.pdf",
-                "JOSE RICARDO QUEIROZ FIUZA - Código 15": "link_to_pdf_3.pdf",
-                "MAGNO JUNIO FERREIRA - Código 89": "link_to_pdf_3.pdf",
-                "MARCELO ALBUQUERQUE ALVAREZ - Código 88": "link_to_pdf_3.pdf",
-                "MARCIO ROGERIO CYRINEU DE MEDEIROS - Código 20": "link_to_pdf_3.pdf",
-                "MARCOS DOS SANTOS GARCIA - Código 66": "link_to_pdf_3.pdf",
-                "MIZAEL DA SILVA LOPES - Código 52": "link_to_pdf_3.pdf",
-                "OSMAR LUCIANO DOS SANTOS - Código 26": "link_to_pdf_3.pdf",
-                "OTAVIO APARECIDO NEVES - Código 76": "link_to_pdf_3.pdf",
-                "RAUL DOMINGUES DE OLIVEIRA MARTINS - Código 30": "link_to_pdf_3.pdf",
-                "RICARDO PINTO DE OLIVEIRA - Código 65": "link_to_pdf_3.pdf",
-                "RODNEY WILLIAM PIRES DE MEIRA - Código 86": "link_to_pdf_3.pdf",
-                "RODRIGO RODRIGUES CLETO - Código 37": "link_to_pdf_3.pdf",
-                "SIDCLEY FERNANDO LEITE DA SILVA - Código 33": "link_to_pdf_3.pdf",
-                "SILVIO CESAR MALTA - Código 34": "link_to_pdf_3.pdf",
-                "TIAGO DAMIAO CORREA DE MORAES - Código 70": "https://drive.google.com/uc?export=download&id=1fgHIjMg52cDjFoMX7zEY9esayFS2d7r8",
-                "FABIO GONCALVES DA MAIA - Código 90": "link_to_pdf_3.pdf",
+                "JOSE RICARDO QUEIROZ FIUZA - Código 15": "https://drive.google.com/file/d/1tlSPFAAc2d4zggumaP2Ux4tZFgbQyIVS/view?usp=sharing",
+                "MAGNO JUNIO FERREIRA - Código 89": "https://drive.google.com/file/d/1fF65DRL13pFohG-Vd3G6RvPp6dL3EiQu/view?usp=sharing",
+                "MARCELO ALBUQUERQUE ALVAREZ - Código 88": "https://drive.google.com/file/d/1LgkiyyjuS3vZ5FG5K2BpK87hHcucPBOn/view?usp=sharing",
+                "MARCIO ROGERIO CYRINEU DE MEDEIROS - Código 20": "https://drive.google.com/file/d/1rlNh04eKUrK5QiKAsm1h4bcZihortPUT/view?usp=sharing",
+                "MARCOS DOS SANTOS GARCIA - Código 66": "https://drive.google.com/file/d/1lgf0cyFjj8nc9ykoc6zBA5K-F4CG3y6S/view?usp=sharing",
+                "MIZAEL DA SILVA LOPES - Código 52": "https://drive.google.com/file/d/1OKs0PsV_RfeW5aHkkP-mHYQeA7AXU-Kr/view?usp=sharing",
+                "OSMAR LUCIANO DOS SANTOS - Código 26": "https://drive.google.com/file/d/1bL4E-ZJ8e1EKXuXXTwOzerz9Acqj7qGy/view?usp=sharing",
+                "OTAVIO APARECIDO NEVES - Código 76": "https://drive.google.com/file/d/1Kb15gmrPBptPNWfPL1XTZpxcTRxmjzE9/view?usp=sharing",
+                "RAUL DOMINGUES DE OLIVEIRA MARTINS - Código 30": "https://drive.google.com/file/d/1QubxUuoSoAmH9BtCCrPN3BpWlhRrmvNQ/view?usp=sharing",
+                "RICARDO PINTO DE OLIVEIRA - Código 65": "https://drive.google.com/file/d/1rHCxw_LT07CuK7XJkC_VksL04T-tMic0/view?usp=sharing",
+                "RODNEY WILLIAM PIRES DE MEIRA - Código 86": "https://drive.google.com/file/d/1cB3eIXfDh15nLl4-NrE1w6MRhWwWwb5M/view?usp=sharing",
+                "RODRIGO RODRIGUES CLETO - Código 37": "https://drive.google.com/file/d/1VMOBzAE07jfiSXNI1gt_Khv8d9nLBiY_/view?usp=sharing",
+                "SIDCLEY FERNANDO LEITE DA SILVA - Código 33": "https://drive.google.com/file/d/17vfk-mrXEwn4xUcONkMevqNT3vMBTVnI/view?usp=sharing",
+                "SILVIO CESAR MALTA - Código 34": "https://drive.google.com/file/d/1wyx8U_aMn74LbcF0S2mjY3LgyN0-tZvi/view?usp=sharing",
+                "TIAGO DAMIAO CORREA DE MORAES - Código 70": "https://drive.google.com/file/d/1j5G1qO7xmqO8nCzX0CIJSO5SWxeN8DRd/view?usp=sharing",
+                
                 // Add more predefined PDFs for other names and codes as needed
             };
 
@@ -181,6 +182,7 @@
                         <option value="CRISTIANO FLORENCIO MACHADO - Código 50">
                         <option value="ELAS FERREIRA - Código 85">
                         <option value="EMANOEL DE PROENÇA CORREA - Código 68">
+			<option value="FABIO GONCALVES DA MAIA - Código 90">	
                         <option value="FELIPE MAXIMO SOARES - Código 87">
                         <option value="JOAO ANTONIO DE OLIVEIRA - Código 79">
                         <option value="JONIEL DE LIMA DEZIDERIO - Código 13">
@@ -200,7 +202,6 @@
                         <option value="SIDCLEY FERNANDO LEITE DA SILVA - Código 33">
                         <option value="SILVIO CESAR MALTA - Código 34">
                         <option value="TIAGO DAMIAO CORREA DE MORAES - Código 70">
-                        <option value="FABIO GONCALVES DA MAIA - Código 90">
                     </datalist>
                 </div>
             </fieldset>
