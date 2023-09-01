@@ -83,6 +83,50 @@
              animation: buttonBackgroundAnimation 0.3s ease;
              box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
        }
+       
+	    /* Botão do Menu Hamburguer */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Menu Hamburguer */
+        .hamburger-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            transition: 0.4s;
+            z-index: 999;
+        }
+
+        .month-list {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .month-list li {
+            margin-bottom: 10px;
+        }
+
+        .month-list li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 	 <script>
         // Check if the user is logged in
@@ -104,6 +148,15 @@
 	<head>
 </head>
     <script>
+	// Função para alternar a visibilidade do menu hamburguer
+       function toggleMenu() {
+          var hamburgerMenu = document.getElementById("hamburgerMenu");
+          if (hamburgerMenu.style.right === "-250px") {
+            hamburgerMenu.style.right = "0";
+          } else {
+            hamburgerMenu.style.right = "-250px";
+          }
+    }
         function generateReportPreview() {
             // Get the selected value from the "Nome - Código" input field 
             var selectedName = document.getElementById("query").value;
@@ -214,6 +267,32 @@
             <div class="input-group">
                 <input type="button" value="Gerar Relatório" onclick="generateReportPreview()">
             </div>
+        		<!-- Botão de Menu Hamburguer -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <!-- Menu Hamburguer -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <ul class="month-list">
+                    <li><a href="pdf_preview.html?pdf=link_do_pdf_janeiro">Janeiro</a></li>
+                    <li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Fevereiro</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Março</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Abril</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Maio</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Junho</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Julho</a></li>
+					<li><a href="https://drive.google.com/drive/folders/1erAoD4QS40fF0KWCsBPWqh67y5fsd8t3?usp=drive_link">Agosto</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Setembro</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Outubro</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Novembro</a></li>
+					<li><a href="pdf_preview.html?pdf=link_do_pdf_fevereiro">Dezembro</a></li>
+                    <!-- Adicione os meses restantes aqui -->
+                </ul>
+                
+            
         </form>
      </div>
      
