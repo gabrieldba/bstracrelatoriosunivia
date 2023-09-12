@@ -197,16 +197,20 @@
                 // Add more predefined PDFs for other names and codes as needed
             };
 
-            // Check if the selected name exists in the PDFs object
-            if (selectedName in pdfs) {
-                // Get the PDF link from the object
-                var pdfLink = pdfs[selectedName];
-                // Redirect to the new page with the PDF preview
-                window.location.href = "pdf_preview.html?pdf=" + encodeURIComponent(pdfLink);
-            } else {
-                alert("Selected name not found or no PDF available for this name.");
-            }
+             // Check if the selected name exists in the PDFs object
+    if (selectedName in pdfs) {
+        // Get the PDF link from the object
+        var pdfLink = pdfs[selectedName];
+        // Redirect to the new page with the PDF preview
+        if (pdfLink) {
+            window.location.href = "pdf_preview.html?pdf=" + encodeURIComponent(pdfLink);
+        } else {
+            alert("Não há PDF disponível para este funcionário.");
         }
+    } else {
+        alert("Nome selecionado não encontrado ou nenhum PDF disponível para este nome.");
+    }
+}
     </script>
 </head>
 <body>
